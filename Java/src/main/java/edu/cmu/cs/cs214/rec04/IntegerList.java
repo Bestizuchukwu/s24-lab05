@@ -59,5 +59,20 @@ public interface IntegerList {
      */
     public int size();
 
+    /**
+     * Checks if the list contains the specified value.
+     *
+     * @param value the value to check for in the list
+     * @return true if the list contains the value, false otherwise
+     */
+    public boolean contains(int value);
 
+    /**
+     * Returns the index of the first occurrence of the specified value in
+     * the list, or -1 if the value is not found.
+     *
+     * @param value the value to search for
+     * @return the index of the first occurrence of the value, or -1 if not found
+     */
+    public int indexOf(int value);
 }
