@@ -32,12 +32,12 @@ public class InheritanceSortedIntList extends SortedIntList {
         return success;
     }
 
-    @Override
+@Override
 public boolean removeAll(IntegerList list) {
     int oldSize = size();
     boolean success = false;
     for (int i = 0; i < list.size(); i++) {
-        if (super.remove(list.get(i))) { // Try to remove each element individually
+        if (remove(list.get(i))) { // Try to remove each element individually
             success = true; // At least one element was removed
         }
     }

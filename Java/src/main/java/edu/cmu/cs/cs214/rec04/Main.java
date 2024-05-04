@@ -16,31 +16,47 @@ public class Main {
          * Feel free to write more to test your implementation. 
          * */
 
-        // IntegerList list1;
-        // SortedIntList list2;
+        IntegerList list1;
+        SortedIntList list2;
 
-        // list1 = new DelegationSortedIntList();
-        // list2 = new InheritanceSortedIntList();
+        list1 = new DelegationSortedIntList();
+        list2 = new InheritanceSortedIntList();
 
-        // // add 5 elements to our first list.
-        // list1.add(1);
-        // list1.add(3);
-        // list1.add(2);
-        // list1.add(4);
-        // list1.add(2);
+        // add 5 elements to our first list.
+        list1.add(1);
+        list1.add(3);
+        list1.add(2);
+        list1.add(4);
+        list1.add(2);
 
-        // printList(list1);
-        // System.out.println(list1.getTotalAdded());
+        //Cast list1 and list2 to InheritanceSortedIntList to access getTotalAdded() method
+        if (list1 instanceof InheritanceSortedIntList) {
+            InheritanceSortedIntList inheritanceList1 = (InheritanceSortedIntList) list1;
+            System.out.println(inheritanceList1.getTotalAdded());
+        } else {
 
-        // // add 2 elements to a second list.
-        // list2.add(3);
-        // list2.add(0);
+            printList(list1);
+            // Since getTotalAdded() is specific to InheritanceSortedIntList, you cannot call it directly on list1
+            // System.out.println(list1.getTotalAdded());
+        }
 
 
-        // // add the first list (5 elements) to our second list (2 elements).
-        // list2.addAll(list1);
+        // add 2 elements to a second list.
+        list2.add(3);
+        list2.add(0);
 
-        // printList(list2);
+        //    Cast list1 and list2 to InheritanceSortedIntList to access getTotalAdded() method
+        if (list2 instanceof InheritanceSortedIntList) {
+            InheritanceSortedIntList inheritanceList2 = (InheritanceSortedIntList) list2;
+            System.out.println(inheritanceList2.getTotalAdded());
+        } else {
+            // add the first list (5 elements) to our second list (2 elements).
+            list2.addAll(list1);
+
+        }
+
+        printList(list2);
+        // Since getTotalAdded() is specific to InheritanceSortedIntList, you cannot call it directly on list2
         // System.out.println(list2.getTotalAdded());
     }
 
